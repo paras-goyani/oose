@@ -26,12 +26,13 @@ SECRET_KEY = 'lt=%1bo13zzsc+$rtvq&0e#l!&6_%=v&po@cvrvc5vhy&0_hkm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]','192.168.43.123']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'ottapp.apps.OttappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,8 +77,11 @@ WSGI_APPLICATION = 'ott.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ott',
+        'USER' :'postgres',
+        'PASSWORD' : '97140',
+        'HOST' : 'localhost'
     }
 }
 
