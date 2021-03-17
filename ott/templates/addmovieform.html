@@ -1,0 +1,187 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="/addmovie" method='post' enctype="multipart/form-data">
+
+    {% csrf_token %}
+    
+    
+    <tr><th><label for="id_movie_name">Movie name:</label></th><td><input type="text" name="movie_name" id="id_movie_name"></td></tr>
+<tr><th><label for="id_poster">Poster:</label></th><td><input type="file" name="poster" id="id_poster"></td></tr>
+<tr><th><label for="id_genre">Genre:</label></th><td><input type="text" name="genre" id="id_genre"></td></tr>
+<tr><th><label for="id_release_date">Release date:</label></th><td><input type="text" name="release_date" id="id_release_date"></td></tr>
+<tr><th><label for="id_ratting">Ratting:</label></th><td><input type="number" name="ratting" step="any" id="id_ratting"></td></tr>
+<tr><th><label for="id_running_time">Running time:</label></th><td><input type="number" name="running_time" id="id_running_time"></td></tr>
+<tr><th><label for="id_description">Description:</label></th><td><textarea name="description" cols="40" rows="10" id="id_description">
+</textarea></td></tr>
+<tr><th><label for="id_video">Video:</label></th><td><input type="file" name="video" id="id_video"></td></tr>
+<tr><th><label for="id_trailer">Trailer:</label></th><td><input type="file" name="trailer" id="id_trailer"></td></tr>
+    <button type="submit">
+        submit
+    </button>
+
+
+    <form>
+    
+</body>
+</html>-->
+
+
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Font -->
+	<link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CUbuntu:300,400,500,700'%}" rel="stylesheet"> 
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap-reboot.min.css'%}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap-grid.min.css'%}">
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+	<link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css'%}">
+	<link rel="stylesheet" href="{% static 'css/nouislider.min.css'%}">
+	<link rel="stylesheet" href="{% static 'css/ionicons.min.css'%}">
+	<link rel="stylesheet" href="{% static 'css/plyr.css'%}">
+	<link rel="stylesheet" href="{% static 'css/photoswipe.css'%}">
+	<link rel="stylesheet" href="{% static 'css/default-skin.css'%}">
+	<link rel="stylesheet" href="{% static 'css/main.css'%}">
+
+	<!-- Favicons -->
+	<link rel="icon" type="image/png" href="{% static 'icon/favicon-32x32.png'%}" sizes="32x32">
+	<link rel="apple-touch-icon" href="{% static 'icon/favicon-32x32.png'%}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{% static 'icon/apple-touch-icon-72x72.png'%}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{% static 'icon/apple-touch-icon-114x114.png'%}">
+	<link rel="apple-touch-icon" sizes="144x144" href="{% static 'icon/apple-touch-icon-144x144.png'%}">
+
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="Dmitry Volkov">
+	<title>FlixGo – Online Movies, TV Shows & Cinema HTML Template</title>
+	
+
+</head>
+<body class="body">
+
+	<div class="sign section--bg" data-bg="{% static 'img/section/section.jpg'%}">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="sign__content">
+						<!-- authorization form -->
+						
+                        <form action="/addmovie" method='post' enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <table>
+                                <div class="sign__group">
+                                <tr>
+                                    <td><label style="color:white" for="id_movie_name">Movie name:</label></td>
+                                    <td><input type="text" name="movie_name" class="sign__input" id="id_movie_name"></td>
+                                </tr>
+                                </div>
+
+                                <div class="sign__group">
+                                <tr>
+                                    <td><label style="color:white" for="id_poster">Poster:</label></td>
+                                    <td><input type="file" name="poster" class="sign__input" id="id_poster"></td>
+                                </tr>
+                                </div>
+
+                                <div class="sign__group">
+                                <tr>
+                                   <td> <label style="color:white" for="id_genre">Genre:</label></td>
+                                    <td><input type="text" name="genre" class="sign__input" id="id_genre"></td>
+                                </tr>
+                                </div>
+
+                                <div class="sign__group">
+                                <tr>
+                                    <td><label style="color:white" for="id_release_date">Release date:</label></td>
+                                    <td><input type="text" name="release_date" class="sign__input" id="id_release_date"></td>
+                                </tr>
+                                </div>
+
+                                <div class="sign__group">
+                                <tr>
+                                    <td><label style="color:white" for="id_ratting">Ratting:</label></td>
+                                    <td><input type="number" name="ratting" class="sign__input" step="any" id="id_ratting"></td>
+                                </tr>
+                                </div>
+
+                                <div class="sign__group">
+                                <tr>
+                                    <td><label style="color:white" for="id_running_time">Running time:</label></td>
+                                    <td><input type="number" name="running_time" class="sign__input" id="id_running_time"></td>
+                                </tr>
+                                </div>
+
+                                <div class="sign__group">
+                                <tr>
+                                    <td><label style="color:white" for="id_description">Description:</label></td>
+                                    <td><textarea name="description" cols="40" rows="10" class="sign__input" id="id_description"></textarea></td>
+                                </tr>
+                                </div>
+
+                                <div class="sign__group">
+                                <tr>
+                                    <td><label style="color:white" for="id_trailer">Trailer:</label></td>
+                                    <td><input type="file" name="trailer" class="sign__input" id="id_trailer"></td>
+                                <tr/>
+                                </div>
+                                
+
+                                <div class="sign__group">
+                                <tr>
+                                    <td><label style="color:white" for="id_video">Video:</label></td>
+                                    <td><input type="file" name="video" class="sign__input" id="id_video"></td>
+                                <tr/>
+                                </div>
+
+
+							
+                                <tr>
+							    <td colspan="2"><button class="sign__btn" type="submit">Add new Movie</button></td>
+                                </tr>
+
+                            
+							
+                                <tr>
+							    <td colspan="2"><span class="sign__text"><a href="#">Home</a></span></td>
+                                </tr>
+
+                            </table>
+						</form>
+						<!-- end authorization form -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- JS -->
+	
+	<script src="{% static 'js/jquery-3.3.1.min.js'%}"></script>
+	<script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+	<script src="{% static 'js/owl.carousel.min.js'%}"></script>
+	<script src="{% static 'js/jquery.mousewheel.min.js'%}"></script>
+	<script src="{% static 'js/jquery.mCustomScrollbar.min.js'%}"></script>
+	<script src="{% static 'js/wNumb.js'%}"></script>
+	<script src="{% static 'js/nouislider.min.js'%}"></script>
+	<script src="{% static 'js/plyr.min.js'%}"></script>
+	<script src="{% static 'js/jquery.morelines.min.js'%}"></script>
+	<script src="{% static 'js/photoswipe.min.js'%}"></script>
+	<script src="{% static 'js/photoswipe-ui-default.min.js'%}"></script>
+	<script src="{% static 'js/main.js'%}"></script>
+</body>
+
+</html>
