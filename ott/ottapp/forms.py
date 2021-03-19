@@ -12,3 +12,4 @@ class AddMovieForm(forms.Form):
     description = forms.CharField(widget=forms.Textarea,required=False)
     video = forms.FileField(validators=[FileExtensionValidator(allowed_extensions=['mp4', 'mkv'])],required=False)
     trailer = forms.FileField(validators=[FileExtensionValidator(allowed_extensions=['mp4', 'mkv'])],required=False)
+    plan = forms.CharField(max_length=5,required=False)

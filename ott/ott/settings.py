@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'lt=%1bo13zzsc+$rtvq&0e#l!&6_%=v&po@cvrvc5vhy&0_hkm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG =True
 
-ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]','192.168.43.123']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'img_cache',
     
 ]
 
@@ -130,4 +131,15 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR,'assets')
+
+
+
+
+IMGCACHE_DEFAULT_STYLE='width:100%' # used in imgcache and imgcache_src
+IMGCACHE_DEFAULT_CLASS='img-responsive'
+IMGCACHE_DEFAULT_Q='100' # default resizing percent
+IMGCACHE_TMP_DIR='img-cache' # full path will be /tmp/img-cache
+IMGCACHE_KEY_PREFIX='django-img-cache' # cache key prefix
+IMGCACHE_DEFAULT_CONTENT_CLASS='img-blur' # used in imgcache_content
+IMGCACHE_DEFAULT_CONTENT_STYLE='width:100%' # used in imgcache_content
 

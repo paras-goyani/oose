@@ -53,48 +53,39 @@
 							<ul class="header__nav">
 								<!-- dropdown -->
 								<li class="header__nav-item">
-									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuHome" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
+									<a class="dropdown-toggle header__nav-link" href="/home" role="button" id="dropdownMenuHome">Home</a>
 
-									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuHome">
-										<li><a href="index.html">Home slideshow bg</a></li>
-										<li><a href="index2.html">Home static bg</a></li>
-									</ul>
+									
 								</li>
 								<!-- end dropdown -->
 
 								<!-- dropdown -->
 								<li class="header__nav-item">
-									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catalog</a>
+									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuCatalog" >Catalog</a>
 
-									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuCatalog">
-										<li><a href="catalog1.html">Catalog Grid</a></li>
-										<li><a href="catalog2.html">Catalog List</a></li>
-										<li><a href="details1.html">Details Movie</a></li>
-										<li><a href="details2.html">Details TV Series</a></li>
-									</ul>
+									
+									
 								</li>
 								<!-- end dropdown -->
 
 								<li class="header__nav-item">
-									<a href="pricing.html" class="header__nav-link">Pricing Plan</a>
+									<a href="/pricing" class="header__nav-link">Pricing Plan</a>
 								</li>
+
+								{% if request.session.admin %}
+									<li class="header__nav-item">
+									<a href="/addmovie" class="header__nav-link">Upload Movie</a>
+								</li>
+								{% else %}{% endif %}
+								
 
 								<li class="header__nav-item">
-									<a href="faq.html" class="header__nav-link">Help</a>
+
+								
+									<a href="/logout" class="header__nav-link">Log Out</a>
 								</li>
 
-								<!-- dropdown -->
-								<li class="dropdown header__nav-item">
-									<a class="dropdown-toggle header__nav-link header__nav-link--more" href="#" role="button" id="dropdownMenuMore" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon ion-ios-more"></i></a>
-
-									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuMore">
-										<li><a href="about.html">About</a></li>
-										<li><a href="signin.html">Sign In</a></li>
-										<li><a href="signup.html">Sign Up</a></li>
-										<li><a href="404.html">404 Page</a></li>
-									</ul>
-								</li>
-								<!-- end dropdown -->
+								
 							</ul>
 							<!-- end header nav -->
 
@@ -104,10 +95,21 @@
 									<i class="icon ion-ios-search"></i>
 								</button>
 
-								<a href="signin.html" class="header__sign-in">
+								{% if request.user %}
+									<a href="signin.html" class="header__sign-in">
+									<i class="icon ion-ios-log-in"></i>
+									<span>{{ request.user.username}}</span>
+									
+								</a>
+								{% else %}
+									<a href="#" class="header__sign-in">
 									<i class="icon ion-ios-log-in"></i>
 									<span>sign in</span>
+									
 								</a>
+								{% endif %}
+
+								
 							</div>
 							<!-- end header auth -->
 
@@ -168,7 +170,7 @@
 					<ul class="footer__list">
 						<li><a href="#">About Us</a></li>
 						<li><a href="#">Pricing Plan</a></li>
-						<li><a href="#">Help</a></li>
+						<li><a href="/logout">Log Out</a></li>
 					</ul>
 				</div>
 				<!-- end footer list -->

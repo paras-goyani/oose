@@ -12,7 +12,22 @@ class Movie(models.Model):
     description = models.CharField(max_length=1000, null=True,blank=True,default='')
     video = models.CharField(max_length=500, null=True,blank=True,default='')
     trailer = models.CharField(max_length=500, null=True,blank=True,default='')
+    plan = models.CharField(max_length=10,default='')
     
 
     def __str__(self):
         return self.movie_name
+    
+    
+class subscription_plan(models.Model):
+    
+    name = models.CharField(max_length=20)
+    duration_day = models.IntegerField(default=0)
+    support = models.CharField(max_length=30)
+    amount = models.IntegerField(default=0)
+    
+    
+class user_plan(models.Model):
+    username = models.CharField(max_length=50,default='')
+    plan_name = models.CharField(max_length=10,default='')
+    
