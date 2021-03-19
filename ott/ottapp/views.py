@@ -18,7 +18,7 @@ import io
 from googleapiclient.http import MediaIoBaseDownload
 
 
-CLIENT_SECRET_FILE = 'ottapp/driveapi/client_secret_541522205044-1tutfoqle8ql6god85vfp7fbdvdiov6h.apps.googleusercontent.com.json'
+CLIENT_SECRET_FILE = 'ottapp/driveapi/client_secret.apps.googleusercontent.com.json'
 API_NAME = 'drive'
 API_VERSION = 'v3'
 SCOPES = ['https://www.googleapis.com/auth/drive']
